@@ -38,8 +38,8 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_until_prime_input()
-    #run_test_next_prime()
+    #run_test_sum_until_prime_input()
+    run_test_next_prime()
     #run_test_prime_gap()
     #run_test_wait_for_sum_of_cubes()
 
@@ -113,7 +113,7 @@ def sum_until_prime_input():
 def run_test_next_prime():
     """ Tests the   next_prime    function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # Done: 3. Implement this TEST function.
     #   It TESTS the  wait_for_prime  function defined below.
     #   Include at least  ** 6 **  tests. (We supplied 5 tests for you.)
     #
@@ -170,14 +170,17 @@ def run_test_next_prime():
     print('Actual:  ', actual)
     print('TEST ENDED!')
 
-    # TODO 3 (continued):
+    # Done 3 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **   the
     #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
 
     # Test 6:
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 149
+    actual = next_prime(144)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
 
 
@@ -196,13 +199,17 @@ def next_prime(m):
       :type m: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
     #    -- Use (call) the   is_prime   function above appropriately.
     # -------------------------------------------------------------------------
-
+    number = int(input('enter a number that is at least 1: '))
+    while True:
+        if is_prime(number) is True:
+            return number
+        number = number + 1
 
 def run_test_prime_gap():
     """ Tests the   prime_gap    function. """
