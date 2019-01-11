@@ -39,8 +39,8 @@ import math
 def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_sum_until_prime_input()
-    run_test_next_prime()
-    #run_test_prime_gap()
+    #run_test_next_prime()
+    run_test_prime_gap()
     #run_test_wait_for_sum_of_cubes()
 
 
@@ -205,7 +205,7 @@ def next_prime(m):
     # IMPLEMENTATION REQUIREMENT:
     #    -- Use (call) the   is_prime   function above appropriately.
     # -------------------------------------------------------------------------
-    number = int(input('enter a number that is at least 1: '))
+    number = m
     while True:
         if is_prime(number) is True:
             return number
@@ -347,7 +347,14 @@ def prime_gap(m):
     #    -- Use (call) the   *** next_prime ***   function
     #       (that you implemented) appropriately.
     # -------------------------------------------------------------------------
-
+    k = 2
+    while True:
+        x = next_prime(k)
+        q = next_prime(x + 1)
+        k = x + 1
+        if (q - x) == m:
+            break
+    return x
 
 def run_test_wait_for_sum_of_cubes():
     """ Tests the   wait_for_sum_of_cubes    function. """
